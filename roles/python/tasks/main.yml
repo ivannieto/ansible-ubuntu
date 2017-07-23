@@ -6,3 +6,16 @@
     - python
     - python-dev
     - python-pip
+    - python3-dev
+    - python3-pip
+    - python3-venv
+
+- name: Upgrade Python2.7 pip setuptools wheel
+  shell:  python -m pip install --user --upgrade pip setuptools wheel
+
+- name: Upgrade Python3 pip setuptools wheel
+  shell: python3.5 -m pip install --user --upgrade pip setuptools wheel
+
+- name: Install virtualenvwrapper
+  shell: python -m pip install --user virtualenvwrapper
+

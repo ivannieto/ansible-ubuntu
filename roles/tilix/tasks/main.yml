@@ -1,0 +1,23 @@
+---
+
+- name: Add Tilix repository
+  apt_repository: repo="ppa:webupd8team/terminix" state=present
+
+- name: Install Tilix
+  apt:  name=tilix state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Fix VTE config
+  shell: ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+  become: true
+
+- name: Append VTE config to bashrc
+  lineinfile:
+    path: $HOME/.bashrc
+    state: present
+    line: {{ vte.config }}
+
+- name: Append VTE config to bashrc
+  lineinfile:
+    path: $HOME/.zshrc
+    state: present
+    line: {{ vte.config }}

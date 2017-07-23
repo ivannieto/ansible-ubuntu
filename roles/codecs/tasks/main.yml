@@ -1,0 +1,23 @@
+---
+
+- name: Install multimedia codec packages
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - ffmpeg
+    - libass-dev
+    - libx264-dev
+    - libfreetype6-dev
+    - libsdl2-dev
+    - libmp3lame-dev
+    - libtheora-dev
+    - libtool
+    - libva-dev
+    - libvdpau-dev
+    - libvorbis-dev
+    - libxcb1-dev
+    - libxcb-shm0-dev
+    - libxcb-xfixes0-dev
+    - ubuntu-restricted-extras
+
+- name: Upgrade installed packages
+  apt: upgrade=yes

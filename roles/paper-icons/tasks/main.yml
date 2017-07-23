@@ -1,0 +1,14 @@
+---
+
+- name: Configure Paper Icons APT repositories
+  apt_repository: repo="ppa:snwh/pulp" state=present
+
+- name: Install Paper Icons
+  apt: pkg=paper-icon-theme state=latest
+  register: paper_icons
+
+- name: Set GTK Icons to Paper
+  command: "gsettings set org.gnome.desktop.interface icon-theme Paper"
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  changed_when: paper_icons.changed

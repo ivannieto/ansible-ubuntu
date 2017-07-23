@@ -85,7 +85,7 @@
     - { role: shutter, become: true }
     # - { role: sift, become: true }
     # - { role: slop, become: true }
-    - { role: skype, become: true }
+    # - { role: skype, become: true }
     # - { role: smartgit, become: true }
     - { role: spotify, become: true }
     # - { role: sublime3, become: true }
@@ -95,13 +95,14 @@
     - { role: tilix, become: true }
     # - { role: ultra-flat-icons, become: true }
     # - { role: urxvt-perls }
-    - { role: vagrant, become: true }
-    - { role: virtualbox, become: true }
+    # - { role: vagrant, become: true }
+    # - { role: virtualbox, become: true }
     # - { role: vokoscreen, become: true }
     # - { role: wine, become: true }
     # - { role: workrave, become: true }
     # - { role: xfce-dockbarx, become: true }
     # - { role: xmind, become: true }
+    - { role: visual-studio-code, become: true }
     # bspwm
     # - { role: sxhkd, become: true }
     # - { role: bspwm, become: true }

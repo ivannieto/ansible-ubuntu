@@ -1,0 +1,7 @@
+---
+
+  - include: install.yml
+
+  - include: install-extensions.yml
+
+  - include: write-settings.yml

@@ -54,13 +54,13 @@
 - name: Remove XDG directories
   file: path="{{ ansible_env.HOME }}/{{ item }}" force=yes state=absent
   with_items:
-    - Documents
-    - Modèles
-    - Images
-    - Vidéos
-    - Musique
-    - Public
-    - Téléchargements
+    - Documentos
+    - Plantillas
+    - Imágenes
+    - Vídeos
+    - Música
+    - Público
+    - Descargas
 
 - name : Run xdg-user-dirs-update
   shell: xdg-user-dirs-update

@@ -14,6 +14,12 @@
     - apache2-mpm-worker
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '14.04'
 
+- name: Install Apache2 PHP modules
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - libapache2-mod-php7.0
+    - libapache2-mod-php
+
 - name: Enable Apache2 modules
   apache2_module: state=present name={{ item }}
   with_items: "{{ apache2.modules }}"

@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: "Blagovest Petrov"
+  description: "Installs MariaDB"
+  company: "Veriosoft"
+  license: "license (MIT, BSD)"
+  min_ansible_version: 1.8
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  categories:
+    - database:sql
+
+dependencies: []

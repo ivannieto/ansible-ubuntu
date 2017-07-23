@@ -1,0 +1,20 @@
+---
+- name: Add MariaDB Repository Key
+  apt_key:
+    state    : 'present'
+    keyserver: 'keyserver.ubuntu.com'
+    id       : '0xF1656F24C74CD1D8'
+
+- name: Setup MariaDB Repo
+  apt_repository:
+    repo: 'deb [arch=amd64,i386] http://ftp.hosteurope.de/mirror/mariadb.org/repo/10.1/ubuntu xenial main'
+
+- name: Install MariaDB
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - mariadb-server
+    - mariadb-client
+
+- name: Install MySQLdb Python package for secure installations.
+  apt: pkg=python-mysqldb state=present
+  when: mysql_secure_installation and mysql_root_password is defined

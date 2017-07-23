@@ -51,7 +51,7 @@
     - nfs-common
     - nmap
     - openssl
-    - plkg-config
+    - pkg-config
     - plank
     - p7zip-full
     - pv

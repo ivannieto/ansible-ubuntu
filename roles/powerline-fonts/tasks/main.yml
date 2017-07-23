@@ -1,0 +1,8 @@
+---
+
+- name: Download repo git Powerline Patched Fonts
+  git: repo=https://github.com/powerline/fonts.git dest=/usr/share/fonts/PowerlineFonts update=yes accept_hostkey=yes
+  register: powerline_fonts_git
+
+- name: Install Powerline Patched Fonts
+  shell: cd /usr/share/fonts/PowerlineFonts && ./install.sh && cd .. && rm -rf PowerlineFonts

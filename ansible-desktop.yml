@@ -22,6 +22,7 @@
     - { role: elasticsearch, become: true }
     # - { role: exim, become: true }
     - { role: fail2ban, become: true }
+    - { role: github, become: true }
     # - { role: gvm, become: true }
     # - { role: hhvm, become: true }
     # - { role: mailcatcher, become: true }

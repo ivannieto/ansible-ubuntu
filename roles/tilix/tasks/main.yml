@@ -14,10 +14,10 @@
   lineinfile:
     path: $HOME/.bashrc
     state: present
-    line: {{ vte.config }}
+    line: "{{ vte.config }}"
 
 - name: Append VTE config to bashrc
   lineinfile:
     path: $HOME/.zshrc
     state: present
-    line: {{ vte.config }}
+    line: "{{ vte.config }}"

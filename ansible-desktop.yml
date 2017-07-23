@@ -14,7 +14,6 @@
     # - { role: projects-installer }
     # Server roles
     - { role: apache2, become: true }
-    - { role: apache2-php, become: true }
     # - { role: beanstalkd, become: true }
     # - { role: blackfire, become: true }
     - { role: composer, become: true }
@@ -37,6 +36,7 @@
     - { role: php, become: true }
     - { role: php-pecl, become: true }
     - { role: php-phar-tools, become: true }
+    - { role: apache2-php, become: true }
     - { role: python, become: true }
     - { role: redis, become: true }
     # - { role: rbenv, become: true }

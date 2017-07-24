@@ -103,6 +103,7 @@
     # - { role: xfce-dockbarx, become: true }
     # - { role: xmind, become: true }
     # - { role: visual-studio-code, become: true }
+    # - { role: zeal, become: true }
     # bspwm
     # - { role: sxhkd, become: true }
     # - { role: bspwm, become: true }

@@ -12,12 +12,12 @@
 
 - name: Append VTE config to bashrc
   lineinfile:
-    path: $HOME/.bashrc
-    state: present
+    dest: $HOME/.bashrc
     line: "{{ vte.config }}"
+    state: present
 
 - name: Append VTE config to bashrc
   lineinfile:
-    path: $HOME/.zshrc
-    state: present
+    dest: $HOME/.zshrc
     line: "{{ vte.config }}"
+    state: present

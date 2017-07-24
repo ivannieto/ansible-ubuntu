@@ -1,17 +1,46 @@
 ---
+# See https://github.com/andreisergiu98/arc-flatabulous-theme
+# Clean theme with sudo rm -rf /usr/share/themes/{Arc-Flatabulous,Arc-Flatabulous-Darker,Arc-Flatabulous-Dark}
 
-- name: Install Flatabulous
-  git: repo=https://github.com/andreisergiu98/arc-flatabulous-theme dest=/usr/share/themes/Flatabulous update=yes accept_hostkey=yes
-  register: arch_flatabulous_git
+- name: Install Arc-Flatabulous-Theme dependencies
+  apt: pkg={{ item }} state=latest cache_valid_time={{ aptcachetime }}
+  with_items:
+    - autoconf
+    - automake
+    - gtk2-engines-murrine
+    - gnome-themes-standard
+    - libgtk-3-dev
 
-- name: Set GTK Theme to Flatabulous
-  command: "gsettings set org.gnome.desktop.interface gtk-theme Arc-Flatabulous-Darker"
+- name: Install Arc-Flatabulous-Theme
+  git: repo=https://github.com/andreisergiu98/arc-flatabulous-theme dest="{{ ansible_env.HOME }}/.cache/arc-flatabulous-theme" update=yes accept_hostkey=yes
+  register: arc_flatabulous_theme_git
   become: true
   become_user: "{{ ansible_env.USER }}"
-  changed_when: arch_flatabulous_git.changed
 
-- name: Set Windows Manager Theme to Flatabulous
-  command: "gsettings set org.gnome.desktop.wm.preferences theme Arc-Flatabulous-Darker"
+- name: Configure
+  command: ./autogen.sh --prefix=/usr --disable-transparency --disable-cinnamon --disable-gnome-shell --with-gnome=3.18
+  args:
+    chdir: "{{ ansible_env.HOME }}/.cache/arc-flatabulous-theme"
+  register: arc_flatabulous_theme_configure
   become: true
   become_user: "{{ ansible_env.USER }}"
-  changed_when: arch_flatabulous_git.changed
+  when: arc_flatabulous_theme_git.changed
+
+- name: Make
+  command: make install
+  args:
+    chdir: "{{ ansible_env.HOME }}/.cache/arc-flatabulous-theme"
+  register: arc_theme_make
+  when: arc_flatabulous_theme_git.changed
+
+- name: Set GTK Theme to Arc-Flatabulous-Darker
+  command: "gsettings set org.gnome.desktop.interface gtk-theme Arc-flatabulous-darker"
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  changed_when: arc_flatabulous_theme_git.changed
+
+- name: Set Windows Manager Theme to Arc-Flatabulous-Darker
+  command: "gsettings set org.gnome.desktop.wm.preferences theme Arc-flatabulous-darker"
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  changed_when: arc_flatabulous_theme_git.changed

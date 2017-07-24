@@ -2,6 +2,63 @@
 - name: Ubuntu desktop environment playbook
   hosts: localhost
   roles:
+    #
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #  
+    # MIN CONFIGURATION
+    #
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #    
+    # - { role: locales, become: true }
+    # - { role: common, become: true }
+    # - { role: codecs, become: true }
+    # - { role: zsh, become: true }
+    # - { role: java-openjdk, become: true }  
+    # ----------------------------------------  
+    # - { role: apache2, become: true }
+    # - { role: composer, become: true }
+    # - { role: docker, become: true }
+    # - { role: elasticsearch, become: true }
+    # - { role: fail2ban, become: true }
+    # - { role: github, become: true }
+    # - { role: mariadb, become: true }
+    # - { role: nodejs, become: true }
+    # - { role: nodejs-fix-global-path }
+    # - { role: php, become: true }
+    # - { role: php-pecl, become: true }
+    # - { role: php-phar-tools, become: true }
+    # - { role: apache2-php, become: true }
+    # - { role: python, become: true }
+    # - { role: redis, become: true }
+    # - { role: rbenv, become: true }
+    # - { role: ssh, become: true }
+    # -----------------------------------------
+    # - { role: desktop, become: true }
+    # - { role: desktop-cleanup, become: true }
+    # - { role: desktop-autostart, become: true }
+    # - { role: desktop-preferences-unity }
+    # - { role: firefox, become: true }
+    # - { role: flatabulous, become: true }
+    # - { role: gimp, become: true }
+    # - { role: inkscape, become: true }
+    # - { role: paper-icons, become: true }
+    # - { role: powerline-fonts, become: true }
+    # - { role: spotify, become: true }
+    # - { role: tilix, become: true }
+    # - { role: visual-studio-code, become: true }
+    # - { role: zeal, become: true }
+    # -----------------------------------------------
+    # - { role: gulp }
+    # - { role: browsersync }
+    # - { role: bower }
+    # - { role: webpack }
+    #
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #
+    # FULL CONFIGURATION
+    #
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #    
     # Common roles
     # - { role: locales, become: true }
     # - { role: common, become: true }

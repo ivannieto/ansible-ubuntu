@@ -1,0 +1,17 @@
+---
+
+- name: Set npm global packages path
+  command: npm config set prefix "{{ ansible_env.HOME }}/.npm-global"
+  changed_when: false
+
+- name: Add npm-global to PATH bash
+  lineinfile:
+    dest: "{{ansible_env.HOME}}/.bashrc"
+    line:  export PATH=~/.npm-global/bin:$PATH
+    state: present
+
+- name: Add npm-global to PATH zsh
+  lineinfile:
+    dest: "{{ansible_env.HOME}}/.zshrc"
+    line:  export PATH=~/.npm-global/bin:$PATH
+    state: present

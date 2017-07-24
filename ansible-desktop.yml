@@ -4,17 +4,17 @@
   roles:
     #
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    #  
+    #
     # MIN CONFIGURATION
     #
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    #    
+    #
     # - { role: locales, become: true }
     # - { role: common, become: true }
     # - { role: codecs, become: true }
     # - { role: zsh, become: true }
-    # - { role: java-openjdk, become: true }  
-    # ----------------------------------------  
+    # - { role: java-openjdk, become: true }
+    # ----------------------------------------
     # - { role: apache2, become: true }
     # - { role: composer, become: true }
     # - { role: docker, become: true }
@@ -43,14 +43,16 @@
     # - { role: inkscape, become: true }
     # - { role: paper-icons, become: true }
     # - { role: powerline-fonts, become: true }
+    - { role: rambox, become: true }
     # - { role: spotify, become: true }
     # - { role: tilix, become: true }
     # - { role: visual-studio-code, become: true }
     # - { role: zeal, become: true }
     # -----------------------------------------------
-    # - { role: gulp }
-    # - { role: browsersync }
+    # - { role: angular }
     # - { role: bower }
+    # - { role: browsersync }
+    # - { role: gulp }
     # - { role: webpack }
     #
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,7 +60,7 @@
     # FULL CONFIGURATION
     #
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    #    
+    #
     # Common roles
     # - { role: locales, become: true }
     # - { role: common, become: true }
@@ -167,7 +169,8 @@
     # - { role: bspwm-panel, become: true }
     # - { role: bspwm-environment, become: true }
     # User roles
-    # - { role: gulp }
-    # - { role: browsersync }
+    # - { role: angular }
     # - { role: bower }
+    # - { role: browsersync }
+    # - { role: gulp }
     # - { role: webpack }

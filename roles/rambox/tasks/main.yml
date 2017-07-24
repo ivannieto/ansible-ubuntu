@@ -1,0 +1,12 @@
+---
+
+- name: Download Rambox from source
+  get_url:
+    url: "https://github.com/saenzramiro/rambox/releases/download/0.5.10/Rambox_0.5.10-x64.deb"
+    dest: "/tmp/Rambox_0.5.10-x64.deb"
+
+- name: Install Rambox
+  apt: deb="/tmp/Rambox_0.5.10-x64.deb"
+
+- name: Clean deb file
+  file: path=/tmp/Rambox_0.5.10-x64.deb state=absent

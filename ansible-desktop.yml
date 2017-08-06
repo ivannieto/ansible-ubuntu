@@ -23,7 +23,6 @@
     - { role: github, become: true }
     - { role: mariadb, become: true }
     - { role: nodejs, become: true }
-    - { role: nodejs-fix-global-path }
     - { role: php, become: true }
     - { role: php-pecl, become: true }
 
@@ -93,7 +92,6 @@
     # - { role: nginx, become: true }
     # - { role: nginx-php-fpm, become: true }
     # - { role: nodejs, become: true }
-    # - { role:  nodejs-fix-global-path }
     # - { role: php, become: true }
     # - { role: php-pecl, become: true }
     # - { role: php-phar-tools, become: true }

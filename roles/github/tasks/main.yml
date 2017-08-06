@@ -1,5 +1,5 @@
 ---
       - name: add user and create ssh key
-        user: name=ivan
+        user: name=$USER
       - name: create authorized_keys from file that just downloaded
-        authorized_key: user=ivan key=https://github.com/ivannieto.keys
+        authorized_key: user=$USER key=https://github.com/ivannieto.keys

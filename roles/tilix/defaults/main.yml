@@ -1,8 +1,7 @@
 ---
 
 vte:
-  config: "
-  # VTE Configuration
-  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-          source /etc/profile.d/vte.sh
-  fi"
+  config: "\n# VTE Configuration\n
+  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then\n
+          source /etc/profile.d/vte.sh\n
+  fi\n"

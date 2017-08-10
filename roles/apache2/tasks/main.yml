@@ -20,9 +20,9 @@
     - libapache2-mod-php7.0
     - libapache2-mod-php
 
-- name: Enable Apache2 modules
-  apache2_module: state=present name={{ item }}
-  with_items: "{{ apache2.modules }}"
+# - name: Enable Apache2 modules
+#   apache2_module: state=present name={{ item }} cache_valid_time={{ aptcachetime }}
+#   with_items: "{{ apache2.modules }}"
 
 - name: Remove default Apache2 vhosts
   file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
